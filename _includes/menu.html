@@ -86,23 +86,6 @@ manage your navigation system {% endcomment %}
     </div>
   </form>
 {% endif %}
-
-        <section aria-label="Small search component">
-          <form class="usa-search usa-search--small" role="search">
-            <label class="usa-sr-only" for="search-field-en-small">Search</label>
-            <input
-              class="usa-input"
-              id="search-field-en-small"
-              type="search"
-              name="search"
-            />
-            <button class="usa-button" type="submit">
-              {% image_with_class "_img/search--white.svg" "usa-search__submit-icon" %}
-            </button>
-          </form>
-        </section>
-        
-        {% include "searchgov/form.html" searchgov: site.searchgov %}
       </div>
     </div>
   </nav>
