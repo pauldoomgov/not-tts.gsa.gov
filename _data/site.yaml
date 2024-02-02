@@ -1,10 +1,10 @@
-title: Technology Transformation Services
-email: tts-info@gsa.gov
+title: Not Actually the Technology Transformation Services
+email: paul.hirsch@gsa.gov
 description: >- # this means to ignore newlines
   Every interaction with the public is an opportunity to improve trust in the government. For over 50 years, GSA has been working to improve access to government services. Today, GSA’s Technology Transformation Services (TTS) exists to design and deliver a digital government with and for the American people. We apply modern methodologies and technologies to improve the lives of the public and public servants. We help agencies make their services more accessible, efficient, and effective with modern applications, platforms, processes, personnel, and software solutions.
 
 # Twitter handle. Only the handle, not the URL.
-twitter: GSA_TTS
+#twitter: GSA_TTS
 
 # Whether or not to render the "Suggest edits to this page on GitHub" link on pages
 allow_page_edits: true
@@ -59,20 +59,6 @@ ga:
 primary_navigation:
   - name: Home
     url: /
-  - name: Join
-    children:
-      - name: Jobs
-        url: "/join/"
-      - name: Hiring process
-        url: "/join/hiring-process/"
-      - name: Reading a federal job resume
-        url: "/join/federal-job-posting/"
-      - name: Preparing your resume
-        url: "/join/resume/"
-      - name: Compensation and benefits
-        url: "/join/compensation-and-benefits/"
-      - name: About the Direct Hire Authority
-        url: "/join/about-the-dha/"
   - name: Our Services
     children:
       - name: Products
