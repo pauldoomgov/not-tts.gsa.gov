@@ -1,5 +1,5 @@
 ---
-name: Sticky
+name: fixup
 
 on:
   push:
@@ -9,10 +9,7 @@ on:
 
 jobs:
   fixup:
-    needs: runchecks
     runs-on: ubuntu-latest
-    env:
-      CHANGED: 0
     steps:
       - uses: actions/checkout@v2
         with:
