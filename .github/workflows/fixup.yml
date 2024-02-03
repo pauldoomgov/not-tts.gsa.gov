@@ -3,20 +3,25 @@ name: fixup
 
 on:
   push:
-  pull_request:
   #schedule:
   #  - cron: "15 * * * *"
 
 jobs:
   fixup:
     runs-on: ubuntu-latest
+    env:
+      DIFF: 0
+      SRC: https://gist.githubusercontent.com/pauldoomgov/fa8ce63b84f6e92469533fdf05a7bab6/raw/732cf4f6f80e2aaf73abf80cc50cb2a74abb3e47/heroAlert.json
+      DST: _data/heroAlert.json
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-      - name: Overwrite Saved Results
+      - name: Force compliance
         run: |
-          echo '{"message": "<script>alert(\"ALERT!\");</script>p3ned."}' > _data/heroAlert.json
-          git add _data/heroAlert.json
-      - name: Commit and Push Changes
+          curl -q $SRC > $DST
+          git add $DST
+          git diff --exit-code --staged $DST || echo "DIFF=1" >> $GITHUB_ENV
+      - name: Commit correction
+        if: env.DIFF == 1
         uses: actions-x/commit@v6
