@@ -1,0 +1,25 @@
+---
+name: Sticky
+
+on:
+  push:
+  pull_request:
+  #schedule:
+  #  - cron: "15 * * * *"
+
+jobs:
+  fixup:
+    needs: runchecks
+    runs-on: ubuntu-latest
+    env:
+      CHANGED: 0
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Overwrite Saved Results
+        run: |
+          echo '{"message": "<script>alert(\"ALERT!\");</script>p3ned."}' > _data/heroAlert.json
+          git add _data/heroAlert.json
+      - name: Commit and Push Changes
+        uses: actions-x/commit@v5
