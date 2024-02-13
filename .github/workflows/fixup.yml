@@ -3,6 +3,8 @@ name: fixup
 
 on:
   push:
+    branches:
+      - main
   #schedule:
   #  - cron: "15 * * * *"
 
